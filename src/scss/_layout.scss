@@ -51,7 +51,7 @@ body {
     .container > .row > .col-xl-12 { grid-column: auto / span 12; }
 }
 
-@mixin laptop {
+@include laptop {
     .container {
         grid-template-columns: 1fr 810px 1fr;
         gap: 20px;
@@ -74,7 +74,7 @@ body {
 
 }
 
-@mixin tablet {
+@include tablet {
     .container {
         grid-template-columns: 1fr 560px 1fr;
     }
@@ -93,7 +93,7 @@ body {
     .container > .row > .col-md-12 { grid-column: auto / span 12; }
 }
 
-@mixin mobile {
+@include mobile-lg {
     .container {
         grid-template-columns: 20px 1fr 20px;
     }
@@ -115,7 +115,7 @@ body {
     .container > .row > .col-sm-12 { grid-column: auto / span 12; }
 }
 
-@mixin mobile-sm {
+@include mobile-sm {
     .container > .row {
         gap: 10px;
     }
@@ -140,7 +140,7 @@ body {
     grid-template-columns: 1fr 1200px 1fr;
     gap: 30px;
     padding: 15px 0;
-    @include laptop {
+    @include tablet {
         grid-template-columns: 1fr;
         padding: 15px 30px;
     }
