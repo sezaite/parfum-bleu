@@ -5,5 +5,13 @@ $p-font: 'Source Sans Pro', sans-serif;
 
 //colors
 
+$th-dark: #111a1d;
+$th-lighter: lighten($th-dark, 7%);
+$th-light: #87B3B6;
+$th-main: #154144;
+$th-brick: #882100;
+$th-aqua: #4E9F9E;
+$th-carrot: #E46F2A;
+
 //spacings
 $section-padding: 80px;

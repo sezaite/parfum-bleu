@@ -1,9 +1,12 @@
 html {
     font-size: 8px;
+    height: 100%;
+    background-color:$th-dark;
 }
 
 * {
     font-family: $p-font;
+    color: $th-light;
 }
 
 h1, h2, h3, h4, h5, h6 {

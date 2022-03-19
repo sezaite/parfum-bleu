@@ -132,3 +132,32 @@ body {
     .container > .row > .col-xs-11 { grid-column: auto / span 11; }
     .container > .row > .col-xs-12 { grid-column: auto / span 12; }
 }
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1200px 1fr;
+    gap: 30px;
+    padding: 15px 0;
+    @include laptop {
+        grid-template-columns: 1fr;
+        padding: 15px 30px;
+    }
+    
+}
+
+.grid-row {
+        display: grid;
+        grid-template-columns: 3fr 2fr 3fr;
+        grid-column: 2/3;
+        gap: 30px;
+        @include desktop {
+            grid-column: 1/2;
+        }
+        & > * {
+            background-color: $th-lighter;
+            height: 600px;
+        }
+}
+
