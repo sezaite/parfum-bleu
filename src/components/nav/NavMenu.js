@@ -1,15 +1,24 @@
+import { NavLink } from "react-router-dom";
+
 const NavMenu = () => {
     return ( 
-        <div className="nav-menu">
+   
+        <nav className='nav-menu'>
             <ul>
                 <li>
-                    a
+                    <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                    b
+                    <NavLink to="/all-perfumes">All perfumes</NavLink>
+                </li>
+                <li>
+                    <NavLink to="#">Single perfume pge</NavLink>
                 </li>
             </ul>
-        </div>
+        </nav> 
+                
+           
+        
      );
 }
  

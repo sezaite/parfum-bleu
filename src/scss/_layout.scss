@@ -138,6 +138,7 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1200px 1fr;
+    grid-auto-rows: auto;
     gap: 30px;
     padding: 15px 0;
     @include tablet {

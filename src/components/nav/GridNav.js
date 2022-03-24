@@ -4,14 +4,14 @@ import NavMenu from "./NavMenu";
 
 const GridNav = () => {
     return ( 
-        <nav>
+        <header>
             <GridLayout>
                 <Logo />
                 <div></div>
                 <NavMenu />
 
             </GridLayout>
-        </nav>
+        </header>
      );
 }
  
