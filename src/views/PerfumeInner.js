@@ -10,7 +10,7 @@ import PerfumeInnerSwiper from '../components/perfumes/PerfumeInnerSwiper';
 const PerfumeInner = () => {
     const { id } = useParams();
     const [perfumeData, setPerfumeData] = useState({});
-    const [images, setImages] = useState({});
+    const [images, setImages] = useState([]);
     const [mainImage, setMainImage] = useState(null);
     const unsplashClientID = "F5Q0JwD8_nDZ11kw5slYkdP1YO3Vky0qqtdrRNdVPSo";
 
@@ -21,21 +21,18 @@ const PerfumeInner = () => {
             axios.get(`https://api.unsplash.com/search/photos/?client_id=${unsplashClientID}&query=perfumes&per_page=5`)
         ])
         .then(axios.spread((res1, res2) => {
-            // console.log(res1);
-            // console.log(res2);
+           
         setPerfumeData(res1.data[id]);
-        // res1.data[id].img ? setMainImage(getImage(res1.data[id].img)) : setMainImage(null); //in case undefined appears
         setMainImage(getImage(res1.data[id].img));
-        setImages(res2.data);
-        console.log(res2.data)
-    })).catch(function (error) {
-        console.log(error);
-      });;
+        setImages(res2.data.results);
+       
+        
+    }))
     
     }, []);
 
     return ( 
-        images ? 
+        images.length ? 
         <GridLayout>
         <GridNav35 />
         <div className="col-5">

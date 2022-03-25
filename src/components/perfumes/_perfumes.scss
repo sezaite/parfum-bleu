@@ -18,3 +18,37 @@
         }
     }
 }
+
+.swiper {
+    display: flex;
+    flex-direction: column;
+    .swiper-wrapper {
+        order: 1;
+    }
+    .swiper-slide {
+        img {
+            max-height: 300px;
+            object-fit: contain;
+            object-position: center;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+}
+
+.swiper-pagination {
+    order: 2;
+    display: flex;
+    position: relative;
+    bottom: unset;
+
+    .swiper-pagination-bullet {
+        margin: 0!important;
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        background-color: transparent;
+        display: flex;
+        position:relative;
+    }
+}
