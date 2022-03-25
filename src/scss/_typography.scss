@@ -1,0 +1,20 @@
+.card-title {
+    font-size: 2.4rem;
+    span {
+        font-size: 1.8rem;
+        font-style: italic;
+        font-weight: 300;
+    }
+}
+
+.price-tag {
+    font-size: 1.8rem; 
+}
+
+.error-message {
+    color: $th-carrot;
+}
+
+.loading-message {
+    color: $th-carrot;
+}

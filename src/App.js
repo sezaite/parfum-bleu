@@ -11,7 +11,7 @@ function App() {
 <Router>
       
         <Routes>
-          <Route path="/perfume-page:id" element={<PerfumeInner/>} /> 
+          <Route path="/perfume-page/:id" element={<PerfumeInner/>} /> 
           <Route path="/all-perfumes" element={<PerfumesGrid/>} />
           <Route exact path="/" element={<Landing/>}/>
           <Route path="*" element={<NotFound/>} />

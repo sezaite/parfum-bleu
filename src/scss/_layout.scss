@@ -1,4 +1,4 @@
-body {
+#root {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -8,13 +8,20 @@ body {
     grid-template-columns: 1fr 1200px 1fr;
     padding: $section-padding 0;
     gap: 30px;
+
 }
     .container > .row {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-column: 2/3;
         gap: 30px;
+    
+        & > * {
+            background-color: $th-lighter;
+            padding: 30px;
+        }
     }
+    .container > .row > .col-0 { display: none; }
     .container > .row > .col-1 { grid-column: auto / span 1; }
     .container > .row > .col-2 { grid-column: auto / span 2; }
     .container > .row > .col-3 { grid-column: auto / span 3; }
@@ -37,6 +44,7 @@ body {
     .container {
         grid-template-columns: 1fr 1020px 1fr;
     }
+    .container > .row > .col-xl-0 { display: none; }
     .container > .row > .col-xl-1 { grid-column: auto / span 1; }
     .container > .row > .col-xl-2 { grid-column: auto / span 2; }
     .container > .row > .col-xl-3 { grid-column: auto / span 3; }
@@ -59,6 +67,7 @@ body {
     .container > .row {
         gap: 20px;
     }
+    .container > .row > .col-lg-0 { display: none; }
     .container > .row > .col-lg-1 { grid-column: auto / span 1; }
     .container > .row > .col-lg-2 { grid-column: auto / span 2; }
     .container > .row > .col-lg-3 { grid-column: auto / span 3; }
@@ -78,7 +87,7 @@ body {
     .container {
         grid-template-columns: 1fr 560px 1fr;
     }
-   
+    .container > .row > .col-md-0 { display: none; }
     .container > .row > .col-md-1 { grid-column: auto / span 1; }
     .container > .row > .col-md-2 { grid-column: auto / span 2; }
     .container > .row > .col-md-3 { grid-column: auto / span 3; }
@@ -98,9 +107,10 @@ body {
         grid-template-columns: 20px 1fr 20px;
     }
     .container > .row {
-        grid-column: 1/2;
+        // grid-column: 1/2;
     }
 
+    .container > .row > .col-sm-0 { display: none; }
     .container > .row > .col-sm-1 { grid-column: auto / span 1; }
     .container > .row > .col-sm-2 { grid-column: auto / span 2; }
     .container > .row > .col-sm-3 { grid-column: auto / span 3; }
@@ -119,6 +129,7 @@ body {
     .container > .row {
         gap: 10px;
     }
+    .container > .row > .col-xs-0 { display: none; }
     .container > .row > .col-xs-1 { grid-column: auto / span 1; }
     .container > .row > .col-xs-2 { grid-column: auto / span 2; }
     .container > .row > .col-xs-3 { grid-column: auto / span 3; }
@@ -133,32 +144,43 @@ body {
     .container > .row > .col-xs-12 { grid-column: auto / span 12; }
 }
 
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1200px 1fr;
-    grid-auto-rows: auto;
-    gap: 30px;
-    padding: 15px 0;
-    @include tablet {
-        grid-template-columns: 1fr;
-        padding: 15px 30px;
+.four-spanner {
+    grid-row: auto / span 2;
+    @include mobile-sm {
+        grid-row: auto;
     }
-    
 }
 
-.grid-row {
-        display: grid;
-        grid-template-columns: 3fr 2fr 3fr;
-        grid-column: 2/3;
-        gap: 30px;
-        @include desktop {
-            grid-column: 1/2;
-        }
-        & > * {
-            background-color: $th-lighter;
-            height: 600px;
-        }
-}
+
+// .grid-container {
+//     display: grid;
+//     grid-template-columns: 1fr 1200px 1fr;
+//     grid-auto-rows: auto;
+//     gap: 30px;
+//     padding: 15px 0;
+//     @include tablet {
+//         grid-template-columns: 1fr;
+//         padding: 15px 30px;
+//     }
+    
+// }
+
+// .grid-row {
+//         display: grid;
+//         grid-template-columns: 3fr 2fr 3fr;
+//         grid-column: 2/3;
+//         gap: 30px;
+//         @include tablet {
+//             grid-column: 1/2;
+//         }
+//         & > * {
+//             background-color: $th-lighter;
+//             height: 600px;
+//         }
+// }
+
+// .grid-row-nav {
+//     grid-template-columns: 3fr 5fr;
+//     @extend .grid-row;
+// }
 

@@ -1,7 +1,7 @@
 const GridLayout = (props) => {
     return ( 
-            <div className="grid-container">
-                <div className="grid-row">
+            <div className="container">
+                <div className="row">
                     {props.children}
                 </div>
             </div>

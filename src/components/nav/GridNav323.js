@@ -2,7 +2,7 @@ import GridLayout from "../layouts/GridLayout";
 import Logo from "./Logo";
 import NavMenu from "./NavMenu";
 
-const GridNav = () => {
+const GridNav323 = () => {
     return ( 
         <header>
             <GridLayout>
@@ -15,4 +15,4 @@ const GridNav = () => {
      );
 }
  
-export default GridNav;
+export default GridNav323;
