@@ -19,11 +19,16 @@
     }
 }
 
-.swiper {
+
+
+
+
+.swiper.productInnerSwiper {
     display: flex;
     flex-direction: column;
     .swiper-wrapper {
         order: 1;
+        align-items: center;
     }
     .swiper-slide {
         img {
@@ -34,21 +39,69 @@
             display: block;
         }
     }
-}
-
-.swiper-pagination {
-    order: 2;
-    display: flex;
-    position: relative;
-    bottom: unset;
-
-    .swiper-pagination-bullet {
-        margin: 0!important;
-        width: 80px;
-        height: 80px;
-        border-radius: 0;
-        background-color: transparent;
+    .swiper-pagination {
+        order: 2;
         display: flex;
-        position:relative;
+        position: relative;
+        bottom: unset;
+        margin-top: 2rem;
+        gap: 1rem;
+        @include laptop {
+            flex-wrap: wrap;
+        }
+        @include mobile-lg {
+            flex-wrap: unset;
+        }
+        @include mobile-sm {
+            flex-wrap: wrap;
+        }
+    
+        .swiper-pagination-bullet {
+            margin: 0!important;
+            width: 80px;
+            // height: 80px;
+            height: unset;
+            aspect-ratio: 1;
+            border-radius: 0;
+            background-color: transparent;
+            display: flex;
+            position:relative;
+            @include laptop {
+                width: calc(33.33% - 0.75rem);
+            }
+            @include mobile-lg {
+                width: unset;
+            }
+            @include mobile-sm {
+                width: calc(33.33% - 0.75rem);
+            }
+
+            img {
+                object-position: center;
+                object-fit: cover;
+                width: 100%;
+                // height: 100%;
+            }
+        }
+        
+    }
+    .swiper-button-prev, .swiper-button-next {
+            background-image: url(../../img/arrow-right.svg);
+            background-repeat: no-repeat;
+            // transform: translateY(-50%);
+            top: 150px;
+        &::after {
+            content: none;
+            
+        }
+        
+    }
+    .swiper-button-prev {
+        // transform: rotate(-180deg);
+        left: 0;
+    }
+    .swiper-button-next {
+        // transform: rotate(-180deg);
+        right: 0;
     }
 }

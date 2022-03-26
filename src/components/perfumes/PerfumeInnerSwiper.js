@@ -1,21 +1,28 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState, useEffect } from 'react';
 import 'swiper/css';
 import { Pagination } from 'swiper';
 import 'swiper/css/pagination'; 
 
 const PerfumeInnerSwiper = ({mainImg, images}) => {
-console.log(images[0].urls.raw)
+const [sources, setSources] = useState(images.map((source, index)=>(
+        source.urls.regular
+        ))
+);
+console.log(sources);
+
     return ( 
-        images ?
-        <Swiper 
+        sources ?
+        <Swiper className = {"productInnerSwiper"}
         modules={[Pagination]} 
         spaceBetween={50} 
         slidesPerView={1} 
+        navigation
         pagination={{ 
             clickable: true,
             renderBullet: function (index, className) {
                 return  `<div class="${className}">
-                <img src="${mainImg}" alt="perfume photo">
+                <img src="${index == 0 ? mainImg : sources[index-1]}" alt="perfume photo">
                 </div>`
 
             },

@@ -18,7 +18,7 @@ const PerfumeInner = () => {
     useEffect(()=>{
         axios.all([
             axios.get("../data.json"),
-            axios.get(`https://api.unsplash.com/search/photos/?client_id=${unsplashClientID}&query=perfumes&per_page=5`)
+            axios.get(`https://api.unsplash.com/search/photos/?client_id=${unsplashClientID}&query=perfumes&per_page=5&orientation=portrait`)
         ])
         .then(axios.spread((res1, res2) => {
            
@@ -35,7 +35,7 @@ const PerfumeInner = () => {
         images.length ? 
         <GridLayout>
         <GridNav35 />
-        <div className="col-5">
+        <div className="col-5 col-sm-12">
             {
             mainImage ? <PerfumeInnerSwiper mainImg={mainImage} images={images}/> : <h3 className="error-message">cannot get the main image</h3>
             }
@@ -45,7 +45,7 @@ const PerfumeInner = () => {
             } */}
         </div>
         <div className="col-2 col-md-0"></div>
-        <div className="col-5 col-md-7">
+        <div className="col-5 col-md-7 col-sm-12">
 
             <h1>{perfumeData.title}</h1>
             <h4>{perfumeData.house}</h4>
