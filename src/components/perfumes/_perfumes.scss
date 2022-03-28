@@ -1,12 +1,39 @@
 .perfume-card {
     padding: 40px;
+    position: relative;
+    &:hover {
+        .img-wrap img {
+            transform: scale(1.1);
+        }
+    }
+    a {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+   
+   
+.img-wrap {
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    & > img {
-        max-height: 250px;
+    max-height: 250px;
+    padding: 30px;
+}
+    .card-image {
+        transition: $transition-all-slow;
         object-fit: contain;
+
+    }
+
+    .favorite-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        &.selected {
+            fill: ''
+        }
     }
 
     .perfume-card-info-wrap {
