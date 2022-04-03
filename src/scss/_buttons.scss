@@ -1,0 +1,11 @@
+button {
+    cursor: pointer;
+}
+
+.login-toggler {
+    &:hover {
+        svg path {
+            fill: $th-aqua;
+        }
+    }
+}

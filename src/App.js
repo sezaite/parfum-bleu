@@ -3,7 +3,9 @@ import Landing from './views/Landing';
 import PerfumesGrid from './views/PerfumesGrid';
 import PerfumeInner from './views/PerfumeInner';
 import NotFound from './views/NotFound';
+import { useState } from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import LoginModal from "./components/modals/LoginModal";
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
           <Route exact path="/" element={<Landing/>}/>
           <Route path="*" element={<NotFound/>} />
         </Routes>
-
+        <LoginModal />
     </Router>
   );
 }

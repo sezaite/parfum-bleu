@@ -1,0 +1,18 @@
+input {
+    border: 1px solid $th-light;
+    width: 100%;
+    font-size: 16px;
+    padding: 0.5em 0.7em;
+    &:focus, &:active, &:hover {
+        border: $input-border-active;
+        
+    }
+}
+
+form label {
+    color: $th-aqua;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
